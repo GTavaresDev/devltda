@@ -1,18 +1,10 @@
 import { Button } from "@/components/ui/button";
 import {
   Field,
-  FieldDescription,
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 export default function InputForm() {
   return (
@@ -27,13 +19,13 @@ export default function InputForm() {
       <FieldGroup>
         <Field>
           <FieldLabel className="text-gray-100" htmlFor="form-name">
-            Name
+            Nome
           </FieldLabel>
           <Input
             className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
             id="form-name"
             type="text"
-            placeholder="Evil Rabbit"
+            placeholder="John Doe"
             required
           />
         </Field>
@@ -47,52 +39,19 @@ export default function InputForm() {
             type="email"
             placeholder="john@example.com"
           />
-          <FieldDescription className="text-gray-400">
-            We&apos;ll never share your email with anyone.
-          </FieldDescription>
         </Field>
-        <div className="grid grid-cols-2 gap-4">
-          <Field>
-            <FieldLabel className="text-gray-100" htmlFor="form-phone">
-              Phone
-            </FieldLabel>
-            <Input
-              className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
-              id="form-phone"
-              type="tel"
-              placeholder="+1 (555) 123-4567"
-            />
-          </Field>
-          <Field>
-            <FieldLabel className="text-gray-100" htmlFor="form-country">
-              Country
-            </FieldLabel>
-            <Select defaultValue="us">
-              <SelectTrigger
-                className="border-gray-700 bg-gray-900 text-white focus:ring-gray-400"
-                id="form-country"
-              >
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent className="border-gray-700 bg-gray-900 text-white">
-                <SelectItem value="us">United States</SelectItem>
-                <SelectItem value="uk">United Kingdom</SelectItem>
-                <SelectItem value="ca">Canada</SelectItem>
-              </SelectContent>
-            </Select>
-          </Field>
-        </div>
         <Field>
-          <FieldLabel className="text-gray-100" htmlFor="form-address">
-            Address
+          <FieldLabel className="text-gray-100" htmlFor="form-cargo">
+            Cargo
           </FieldLabel>
           <Input
             className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
-            id="form-address"
+            id="form-cargo"
             type="text"
-            placeholder="123 Main St"
+            placeholder="Desenvolvedor"
           />
         </Field>
+        
         <Field orientation="horizontal">
           <Button
             className="border-gray-600 bg-transparent text-gray-100 hover:bg-gray-700 hover:text-white"
