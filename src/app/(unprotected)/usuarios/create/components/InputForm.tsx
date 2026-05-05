@@ -7,38 +7,33 @@ import {
 import { Input } from "@/components/ui/input";
 import { User } from "@/app/types/users-type";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type InputFormProps = {
   onAddUser: (newUser: User) => void;
 };
 
 export default function InputForm({ onAddUser }: InputFormProps) {
-  const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [cargo, setCargo] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [cargo, setCargo] = useState("");
 
-  function onAddUserSubmit() {
+    function onAddUserSubmit() {
     if (!name.trim() || !email.trim() || !cargo.trim()) return;
 
     const newUser: User = {
       id: Date.now(),
-      name: name.trim(),
-      email: email.trim(),
-      cargo: cargo.trim(),
-      salary: 0,
+      name,
+      email,
+      cargo,
     };
-
     onAddUser(newUser);
     setName("");
     setEmail("");
     setCargo("");
-  }
-
+}
   return (
-    <form
-      className="w-full max-w-2xl rounded-xl bg-gray-800 p-6 text-white shadow"
+    <form className="w-full max-w-2xl rounded-xl bg-gray-800 p-6 text-white shadow"
       onSubmit={(e) => {
         e.preventDefault();
         onAddUserSubmit();
@@ -75,7 +70,6 @@ export default function InputForm({ onAddUser }: InputFormProps) {
             id="form-email"
             type="email"
             placeholder="john@example.com"
-            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -89,7 +83,6 @@ export default function InputForm({ onAddUser }: InputFormProps) {
             id="form-cargo"
             type="text"
             placeholder="Desenvolvedor"
-            required
             value={cargo}
             onChange={(e) => setCargo(e.target.value)}
           />
@@ -99,12 +92,11 @@ export default function InputForm({ onAddUser }: InputFormProps) {
             className="border-gray-600 bg-transparent text-gray-100 hover:bg-gray-700 hover:text-white"
             type="button"
             variant="outline"
-            onClick={() => router.push("/usuarios")}
           >
-            Cancelar
+            Cancel
           </Button>
           <Button className="bg-blue-600 text-white hover:bg-blue-700" type="submit">
-            Salvar
+            <Link href="/usuarios">Submit</Link>
           </Button>
         </Field>
       </FieldGroup>
