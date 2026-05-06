@@ -6,7 +6,7 @@ function FieldGroup({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <div className={cn("space-y-6", className)} {...props} />;
+  return <div className={cn("space-y-5", className)} {...props} />;
 }
 
 function Field({
@@ -20,7 +20,7 @@ function Field({
     <div
       className={cn(
         orientation === "horizontal"
-          ? "flex items-center justify-end gap-3"
+          ? "flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:items-center sm:justify-end"
           : "space-y-2",
         className
       )}
@@ -35,7 +35,10 @@ function FieldLabel({
 }: React.ComponentProps<"label">) {
   return (
     <label
-      className={cn("text-sm font-medium leading-none text-foreground", className)}
+      className={cn(
+        "ml-1 text-sm font-semibold leading-none text-zinc-400",
+        className
+      )}
       {...props}
     />
   );
@@ -46,7 +49,7 @@ function FieldDescription({
   ...props
 }: React.ComponentProps<"p">) {
   return (
-    <p className={cn("text-sm text-muted-foreground", className)} {...props} />
+    <p className={cn("text-sm text-zinc-500", className)} {...props} />
   );
 }
 

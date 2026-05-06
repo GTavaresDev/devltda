@@ -45,26 +45,30 @@ export default function InputForm({ onAddUser }: InputFormProps) {
 
   return (
     <form
-      className="w-full max-w-2xl rounded-xl bg-gray-800 p-6 text-white shadow"
+      className="w-full max-w-2xl rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white shadow-xl shadow-black/10"
       onSubmit={(e) => {
         e.preventDefault();
         onAddUserSubmit();
       }}
     >
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Novo usuário</h1>
-        <p className="mt-2 text-sm text-gray-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          Cadastro
+        </p>
+        <h1 className="mt-3 text-2xl font-bold tracking-tight text-zinc-50">
+          Novo usuário
+        </h1>
+        <p className="mt-2 text-sm text-zinc-400">
           Preencha os dados para cadastrar um colaborador no sistema.
         </p>
       </div>
 
       <FieldGroup>
         <Field>
-          <FieldLabel className="text-gray-100" htmlFor="form-name">
+          <FieldLabel className="text-zinc-400" htmlFor="form-name">
             Nome
           </FieldLabel>
           <Input
-            className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
             id="form-name"
             type="text"
             placeholder="John Doe"
@@ -74,11 +78,10 @@ export default function InputForm({ onAddUser }: InputFormProps) {
           />
         </Field>
         <Field>
-          <FieldLabel className="text-gray-100" htmlFor="form-email">
+          <FieldLabel className="text-zinc-400" htmlFor="form-email">
             Email
           </FieldLabel>
           <Input
-            className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
             id="form-email"
             type="email"
             placeholder="john@example.com"
@@ -88,11 +91,10 @@ export default function InputForm({ onAddUser }: InputFormProps) {
           />
         </Field>
         <Field>
-          <FieldLabel className="text-gray-100" htmlFor="form-cargo">
+          <FieldLabel className="text-zinc-400" htmlFor="form-cargo">
             Cargo
           </FieldLabel>
           <Input
-            className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
             id="form-cargo"
             type="text"
             placeholder="Desenvolvedor"
@@ -102,11 +104,10 @@ export default function InputForm({ onAddUser }: InputFormProps) {
           />
         </Field>
         <Field>
-          <FieldLabel className="text-gray-100" htmlFor="form-salary">
+          <FieldLabel className="text-zinc-400" htmlFor="form-salary">
             Salário
           </FieldLabel>
           <Input
-            className="border-gray-700 bg-gray-900 text-white placeholder:text-gray-500 focus-visible:ring-gray-400"
             id="form-salary"
             type="number"
             min="0"
@@ -119,13 +120,13 @@ export default function InputForm({ onAddUser }: InputFormProps) {
         </Field>
         <Field orientation="horizontal">
           <Button
-            className="border-gray-600 bg-transparent text-gray-100 hover:bg-gray-700 hover:text-white"
+            className="sm:min-w-32"
             type="button"
             variant="outline"
           >
             Cancel
           </Button>
-          <Button className="bg-blue-600 text-white hover:bg-blue-700" type="submit">
+          <Button className="sm:min-w-32" type="submit">
             Submit
           </Button>
         </Field>
