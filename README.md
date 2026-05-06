@@ -75,17 +75,17 @@ import { db } from "@/db";
 
 // Criar registro
 await db.salario.create({
-	data: {
-		usuarioId: 1,
-		valor: 5000,
-		referencia: "2026-05",
-	},
+  data: {
+    usuarioId: 1,
+    valor: 5000,
+    referencia: "2026-05",
+  },
 });
 
 // Atualizar registro
 await db.salario.update({
-	where: { id: 1 },
-	data: { valor: 5500 },
+  where: { id: 1 },
+  data: { valor: 5500 },
 });
 ```
 
@@ -130,10 +130,10 @@ Se quiser, você pode adicionar scripts para facilitar o fluxo Prisma:
 
 ```json
 {
-	"scripts": {
-		"migrate:dev": "prisma migrate dev",
-		"migrate:deploy": "prisma migrate deploy",
-		"studio": "prisma studio"
-	}
+  "scripts": {
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "studio": "prisma studio"
+  }
 }
 ```
