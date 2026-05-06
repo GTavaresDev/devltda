@@ -8,7 +8,7 @@ export default function Form({ addGastos }: FormProps) {
   return (
     <form
       action={addGastos}
-      className="flex w-full max-w-md flex-col gap-5 rounded-2xl border border-zinc-800 bg-zinc-900 p-6 shadow-xl shadow-black/10"
+      className="flex w-full max-w-md flex-col gap-5 rounded-2xl border border-zinc-800 bg-zinc-900 p-4 shadow-xl shadow-black/10 sm:p-5 md:p-6"
     >
       <div className="flex flex-col gap-2">
         <label

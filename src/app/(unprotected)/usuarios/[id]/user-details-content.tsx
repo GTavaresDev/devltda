@@ -17,11 +17,11 @@ export default function UserDetailsContent({ id }: { id: string }) {
   return (
     <div>
       <Voltar />
-      <section className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-xl shadow-black/10 text-white">
+      <section className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 shadow-xl shadow-black/10 text-white sm:p-5 md:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
           Perfil
         </p>
-        <h1 className="mb-6 mt-3 text-2xl font-bold tracking-tight text-zinc-50">
+        <h1 className="mb-6 mt-3 text-xl font-bold tracking-tight text-zinc-50 sm:text-2xl">
           Detalhes do Usuário
         </h1>
 
