@@ -11,7 +11,7 @@ export default function UsuariosPage() {
     <div>
       <Header />
 
-      <section className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-white shadow-xl shadow-black/10">
+      <section className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 text-white shadow-xl shadow-black/10 sm:p-5 md:mt-8 md:p-6">
         <div className="mb-5">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Gestão

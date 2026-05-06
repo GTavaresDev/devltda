@@ -22,7 +22,7 @@ export default function CreateGastos() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center px-4 pt-6">
+    <div className="flex flex-col items-center px-0 py-2 sm:px-2 md:py-4">
       <div className="w-full max-w-md">
         <Link
           href="/gastos"
@@ -35,7 +35,7 @@ export default function CreateGastos() {
           Financeiro
         </p>
 
-        <h1 className="mb-6 mt-3 text-3xl font-extrabold tracking-tight text-zinc-100">
+        <h1 className="mb-6 mt-3 text-2xl font-extrabold tracking-tight text-zinc-100 md:text-3xl">
           Criar Gasto
         </h1>
 

@@ -45,7 +45,7 @@ export default function InputForm({ onAddUser }: InputFormProps) {
 
   return (
     <form
-      className="w-full max-w-2xl rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-white shadow-xl shadow-black/10"
+      className="w-full max-w-2xl rounded-2xl border border-zinc-800 bg-zinc-900 p-4 text-white shadow-xl shadow-black/10 sm:p-5 md:p-6"
       onSubmit={(e) => {
         e.preventDefault();
         onAddUserSubmit();
@@ -55,7 +55,7 @@ export default function InputForm({ onAddUser }: InputFormProps) {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
           Cadastro
         </p>
-        <h1 className="mt-3 text-2xl font-bold tracking-tight text-zinc-50">
+        <h1 className="mt-3 text-xl font-bold tracking-tight text-zinc-50 sm:text-2xl">
           Novo usuário
         </h1>
         <p className="mt-2 text-sm text-zinc-400">
