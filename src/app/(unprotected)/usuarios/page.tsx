@@ -11,8 +11,13 @@ export default function UsuariosPage() {
     <div>
       <Header />
 
-      <section className="mt-8 rounded-xl bg-gray-800 p-6 text-white shadow">
-        <h1 className="mb-4 text-xl font-bold">Usuários</h1>
+      <section className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-white shadow-xl shadow-black/10">
+        <div className="mb-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+            Gestão
+          </p>
+          <h1 className="mt-2 text-xl font-bold text-zinc-100">Usuários</h1>
+        </div>
         <UsersTable users={users} />
       </section>
     </div>

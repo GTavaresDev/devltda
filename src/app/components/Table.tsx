@@ -1,27 +1,37 @@
+import {
+  Table as UITable,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 export default function Table(props: {
   users: { id: number; name: string; cargo: string; salary: number }[];
 }) {
   return (
-    <table className="w-full border-collapse">
-      <thead>
-        <tr className="border-b text-left text-gray-500">
-          <th className="py-3">ID</th>
-          <th className="py-3">Nome</th>
-          <th className="py-3">Cargo</th>
-          <th className="py-3">Salário</th>
-        </tr>
-      </thead>
-
-      <tbody>
+    <UITable>
+      <TableHeader>
+        <TableRow>
+          <TableHead>ID</TableHead>
+          <TableHead>Nome</TableHead>
+          <TableHead>Cargo</TableHead>
+          <TableHead>Salário</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {props.users.map((user) => (
-          <tr key={user.id} className="border-b hover:bg-gray-700">
-            <td className="py-3">{user.id}</td>
-            <td className="py-3">{user.name}</td>
-            <td className="py-3">{user.cargo}</td>
-            <td className="py-3">R$ {user.salary.toLocaleString("pt-BR")}</td>
-          </tr>
+          <TableRow key={user.id}>
+            <TableCell>{user.id}</TableCell>
+            <TableCell className="font-medium text-zinc-100">
+              {user.name}
+            </TableCell>
+            <TableCell>{user.cargo}</TableCell>
+            <TableCell>R$ {user.salary.toLocaleString("pt-BR")}</TableCell>
+          </TableRow>
         ))}
-      </tbody>
-    </table>
+      </TableBody>
+    </UITable>
   );
 }

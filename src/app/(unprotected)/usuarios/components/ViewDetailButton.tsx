@@ -12,7 +12,7 @@ export default function ViewDetailButton({ userId }: { userId: number }) {
   return (
     <button
       onClick={handleClick}
-      className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100 transition-colors duration-300 hover:bg-cyan-400/20"
+      className="rounded-xl border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm font-semibold text-indigo-100 transition-all duration-200 hover:bg-indigo-500/20"
     >
       Editar
     </button>
