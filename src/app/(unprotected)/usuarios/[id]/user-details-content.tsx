@@ -15,9 +15,9 @@ export default function UserDetailsContent({ id }: { id: string }) {
   }
 
   return (
-    <div>
+    <div className="page-stack">
       <Voltar />
-      <section className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 shadow-xl shadow-black/10 text-white sm:p-5 md:p-6">
+      <section className="surface-card section-block text-white">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
           Perfil
         </p>
@@ -25,23 +25,25 @@ export default function UserDetailsContent({ id }: { id: string }) {
           Detalhes do Usuário
         </h1>
 
-        <div className="space-y-4">
-          <div className="border-b border-zinc-800 pb-4">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
             <p className="text-sm text-zinc-500">ID</p>
             <strong className="mt-1 block text-lg">#{user.id}</strong>
           </div>
 
-          <div className="border-b border-zinc-800 pb-4">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
             <p className="text-sm text-zinc-500">Nome</p>
-            <strong className="mt-1 block text-lg">{user.name}</strong>
+            <strong className="mt-1 block break-words text-lg">
+              {user.name}
+            </strong>
           </div>
 
-          <div className="border-b border-zinc-800 pb-4">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
             <p className="text-sm text-zinc-500">Cargo</p>
             <strong className="mt-1 block text-lg">{user.cargo}</strong>
           </div>
 
-          <div>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
             <p className="text-sm text-zinc-500">Salário</p>
             <strong className="mt-1 block text-lg text-indigo-300">
               R$ {user.salary.toLocaleString("pt-BR")}

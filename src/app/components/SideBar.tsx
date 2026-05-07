@@ -43,7 +43,7 @@ export default function SideBar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/95 px-4 py-4 text-zinc-100 backdrop-blur md:hidden">
+      <header className="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/95 px-[var(--page-gutter)] py-4 text-zinc-100 backdrop-blur md:hidden">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
@@ -59,7 +59,7 @@ export default function SideBar() {
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMobileMenuOpen((current) => !current)}
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 px-4 text-sm font-semibold text-zinc-100 transition-all hover:border-zinc-700 hover:bg-zinc-800"
+            className="inline-flex min-h-11 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 px-4 text-sm font-semibold text-zinc-100 transition-all hover:border-zinc-700 hover:bg-zinc-800"
           >
             Menu
           </button>
@@ -73,7 +73,7 @@ export default function SideBar() {
             {links.map((link) => (
               <Link
                 key={link.href}
-                className={getLinkClassName(link.href)}
+                className={`${getLinkClassName(link.href)} w-full`}
                 href={link.href}
                 onClick={handleLinkClick}
               >
@@ -84,7 +84,7 @@ export default function SideBar() {
         ) : null}
       </header>
 
-      <aside className="sticky top-0 hidden min-h-screen w-72 shrink-0 border-r border-zinc-800 bg-zinc-950/95 px-6 py-8 text-zinc-100 backdrop-blur md:block">
+      <aside className="sticky top-0 hidden min-h-screen w-72 shrink-0 border-r border-zinc-800 bg-zinc-950/95 px-6 py-8 text-zinc-100 backdrop-blur xl:w-80 md:block">
         <div className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">
             DevLtda

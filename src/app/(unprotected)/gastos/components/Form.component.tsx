@@ -8,12 +8,12 @@ export default function Form({ addGastos }: FormProps) {
   return (
     <form
       action={addGastos}
-      className="flex w-full max-w-md flex-col gap-5 rounded-2xl border border-zinc-800 bg-zinc-900 p-4 shadow-xl shadow-black/10 sm:p-5 md:p-6"
+      className="surface-card flex w-full flex-col gap-5 p-4 shadow-xl shadow-black/10 sm:p-5 md:p-6"
     >
       <div className="flex flex-col gap-2">
         <label
           htmlFor="titulo"
-          className="text-sm font-semibold text-zinc-400 ml-1"
+          className="ml-1 text-sm font-semibold text-zinc-400"
         >
           Título
         </label>
@@ -30,7 +30,7 @@ export default function Form({ addGastos }: FormProps) {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="descricao"
-          className="text-sm font-semibold text-zinc-400 ml-1"
+          className="ml-1 text-sm font-semibold text-zinc-400"
         >
           Descrição
         </label>
@@ -46,7 +46,7 @@ export default function Form({ addGastos }: FormProps) {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="valor"
-          className="text-sm font-semibold text-zinc-400 ml-1"
+          className="ml-1 text-sm font-semibold text-zinc-400"
         >
           Valor
         </label>

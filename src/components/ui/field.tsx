@@ -6,7 +6,7 @@ function FieldGroup({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <div className={cn("space-y-5", className)} {...props} />;
+  return <div className={cn("flex flex-col gap-5", className)} {...props} />;
 }
 
 function Field({
@@ -20,7 +20,7 @@ function Field({
     <div
       className={cn(
         orientation === "horizontal"
-          ? "flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:items-center sm:justify-end"
+          ? "flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end"
           : "space-y-2",
         className
       )}

@@ -22,11 +22,11 @@ export default function CreateGastos() {
   };
 
   return (
-    <div className="flex flex-col items-center px-0 py-2 sm:px-2 md:py-4">
-      <div className="w-full max-w-md">
+    <div className="flex flex-col items-center py-2 md:py-4">
+      <div className="w-full max-w-2xl">
         <Link
           href="/gastos"
-          className="mb-4 inline-block text-sm text-zinc-400 hover:text-white"
+          className="mb-4 inline-flex min-h-11 items-center rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm font-medium text-zinc-200 transition-all hover:border-zinc-700 hover:bg-zinc-800 hover:text-white"
         >
           ← Voltar
         </Link>
@@ -35,7 +35,7 @@ export default function CreateGastos() {
           Financeiro
         </p>
 
-        <h1 className="mb-6 mt-3 text-2xl font-extrabold tracking-tight text-zinc-100 md:text-3xl">
+        <h1 className="mb-6 mt-3 text-[clamp(1.75rem,1.45rem+1vw,2.5rem)] font-extrabold tracking-tight text-zinc-100">
           Criar Gasto
         </h1>
 

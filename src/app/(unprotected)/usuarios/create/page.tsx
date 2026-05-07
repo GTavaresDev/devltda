@@ -16,7 +16,7 @@ export default function CreateUserPage() {
   }
 
   return (
-    <div className="flex justify-center px-0 py-2 sm:px-2 md:py-4">
+    <div className="flex justify-center py-2 md:py-4">
       <InputForm onAddUser={handleAddUser} />
     </div>
   );

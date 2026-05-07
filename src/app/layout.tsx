@@ -34,8 +34,8 @@ export default function RootLayout({
           <div className="min-h-screen bg-background text-foreground md:flex">
             <SideBar />
             <div className="flex min-h-screen min-w-0 flex-1 flex-col">
-              <main className="flex-1 px-4 py-5 sm:px-5 md:px-8 md:py-8">
-                {children}
+              <main className="flex-1 px-[var(--page-gutter)] py-5 md:py-8">
+                <div className="app-shell">{children}</div>
               </main>
               <Footer />
             </div>

@@ -4,10 +4,10 @@ import Statistic from "./components/Statistic";
 
 export default function DashboardPage() {
   return (
-    <>
+    <div className="page-stack">
       <Header />
       <Statistic />
       <List />
-    </>
+    </div>
   );
 }

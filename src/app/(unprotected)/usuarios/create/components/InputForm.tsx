@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Field,
@@ -6,6 +8,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { User } from "@/app/types/users-type";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type InputFormProps = {
@@ -13,6 +16,7 @@ type InputFormProps = {
 };
 
 export default function InputForm({ onAddUser }: InputFormProps) {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cargo, setCargo] = useState("");
@@ -45,7 +49,7 @@ export default function InputForm({ onAddUser }: InputFormProps) {
 
   return (
     <form
-      className="w-full max-w-2xl rounded-2xl border border-zinc-800 bg-zinc-900 p-4 text-white shadow-xl shadow-black/10 sm:p-5 md:p-6"
+      className="surface-card w-full max-w-3xl p-4 text-white sm:p-5 md:p-6"
       onSubmit={(e) => {
         e.preventDefault();
         onAddUserSubmit();
@@ -63,7 +67,7 @@ export default function InputForm({ onAddUser }: InputFormProps) {
         </p>
       </div>
 
-      <FieldGroup>
+      <FieldGroup className="grid gap-5 md:grid-cols-2 md:gap-6">
         <Field>
           <FieldLabel className="text-zinc-400" htmlFor="form-name">
             Nome
@@ -118,16 +122,20 @@ export default function InputForm({ onAddUser }: InputFormProps) {
             onChange={(e) => setSalary(e.target.value)}
           />
         </Field>
-        <Field orientation="horizontal">
+        <Field
+          orientation="horizontal"
+          className="md:col-span-2 md:pt-3"
+        >
           <Button
-            className="sm:min-w-32"
+            className="w-full sm:min-w-32 sm:w-auto"
             type="button"
             variant="outline"
+            onClick={() => router.push("/usuarios")}
           >
-            Cancel
+            Cancelar
           </Button>
-          <Button className="sm:min-w-32" type="submit">
-            Submit
+          <Button className="w-full sm:min-w-32 sm:w-auto" type="submit">
+            Salvar usuário
           </Button>
         </Field>
       </FieldGroup>
