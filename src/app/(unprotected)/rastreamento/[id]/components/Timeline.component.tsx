@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { CardDescription } from "@/components/ui/card";
+
 type TimelineItem = {
   id: number;
   title: string;
@@ -12,21 +14,15 @@ type TimelineItem = {
 type TimelineProps = {
   items: TimelineItem[];
   currentStatusId: number;
-  updatedAt: Date;
 };
 
-export default function Timeline({
-  items,
-  currentStatusId,
-  updatedAt,
-}: TimelineProps) {
+export default function Timeline({ items, currentStatusId }: TimelineProps) {
   const [expanded, setExpanded] = useState(false);
   const completedCount = items.filter(
     (item) => item.id <= currentStatusId,
   ).length;
   const progressPercent =
     items.length === 0 ? 0 : Math.round((completedCount / items.length) * 100);
-  const updatedAtLabel = updatedAt.toLocaleString("pt-BR");
 
   return (
     <button
@@ -217,12 +213,6 @@ export default function Timeline({
                     ].join(" ")}
                   >
                     {item.subTitle}
-                  </p>
-                ) : null}
-
-                {expanded && current ? (
-                  <p className="mt-1 text-xs text-emerald-400">
-                    Atualizado em {updatedAtLabel}
                   </p>
                 ) : null}
 
