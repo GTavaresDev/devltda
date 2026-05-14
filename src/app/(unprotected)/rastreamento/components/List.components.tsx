@@ -8,6 +8,9 @@ import {
 } from "@/components/ui/table";
 import type { Log } from "@/app/types/log-types";
 import ViewDetailButton from "./ViewDetailButton";
+import EditDetailButton from "./EditDetailButton";
+import { Button } from "@/components/ui/button";
+import { Link } from "lucide-react";
 
 type ListProps = {
   log: Log[];
@@ -38,6 +41,7 @@ export default function List({ log }: ListProps) {
             <TableCell>{item.statusId}</TableCell>
             <TableCell>
               <ViewDetailButton logId={item.id} />
+              <EditDetailButton logId={item.id} />
             </TableCell>
           </TableRow>
         ))}

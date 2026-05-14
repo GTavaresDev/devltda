@@ -38,3 +38,15 @@ export async function getLogById(id: number): Promise<Log | null> {
 
   return log ? mapLog(log) : null;
 }
+
+export async function updateLogStatusById(
+  id: number,
+  statusId: number
+): Promise<Log | null> {
+  const log = await db.log.update({
+    where: { id },
+    data: { statusId },
+  });
+
+  return log ? mapLog(log) : null;
+}

@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import { getLogById } from "@/app/data/log";
+import { getTrackingStatuses } from "@/app/data/status";
 import DetailsContent from "./components/DetailsContent.component";
 import Header from "./components/Header.component";
 
@@ -27,8 +28,9 @@ export default async function RastreamentoPage({
   }
 
   const log = await getLogById(logId);
+  const statuses = await getTrackingStatuses();
 
-  if (!log) {
+  if (!log || statuses.length === 0) {
     notFound();
   }
 
@@ -45,11 +47,11 @@ export default async function RastreamentoPage({
             senderName={log.senderName}
             arrivedAt={log.arrivedAt}
             statusId={log.statusId}
+            updatedAt={log.updatedAt}
+            statuses={statuses}
           />
         </CardContent>
-        <CardFooter>
-          <CardDescription>Detalhes do rastreamento</CardDescription>
-        </CardFooter>
+        <CardFooter />
       </Card>
     </div>
   );

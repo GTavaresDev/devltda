@@ -10,7 +10,7 @@ export default function Section({ children }: SectionProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Gestão
           </p>
-          <h1 className="mt-2 text-xl font-bold text-zinc-100">Usuários</h1>
+          <h1 className="mt-2 text-xl font-bold text-zinc-100">Rastreamento</h1>
         </div>
         {children}
       </section>
