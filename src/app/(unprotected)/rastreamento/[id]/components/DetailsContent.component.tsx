@@ -44,7 +44,6 @@ export default function DetailsContent({
       <Timeline
         items={statuses}
         currentStatusId={effectiveStatusId}
-        updatedAt={updatedAt}
       />
     </div>
   );
