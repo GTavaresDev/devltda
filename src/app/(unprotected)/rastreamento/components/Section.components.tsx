@@ -1,14 +1,10 @@
-import Header from "./components/Header";
-import UsersTable from "./components/UsersTable";
-import { getUsers } from "@/app/data/users";
+type SectionProps = {
+  children: React.ReactNode;
+};
 
-export default async function UsuariosPage() {
-  const users = await getUsers();
-
+export default function Section({ children }: SectionProps) {
   return (
-    <div>
-      <Header />
-
+    <>
       <section className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 text-white shadow-xl shadow-black/10 sm:p-5 md:mt-8 md:p-6">
         <div className="mb-5">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -16,8 +12,8 @@ export default async function UsuariosPage() {
           </p>
           <h1 className="mt-2 text-xl font-bold text-zinc-100">Usuários</h1>
         </div>
-        <UsersTable users={users} />
+        {children}
       </section>
-    </div>
+    </>
   );
 }

@@ -15,10 +15,48 @@ datasource db {
 }
 
 model Gastos {
-  id Int @id @default(autoincrement())
-  titulo String
+  id        Int      @id @default(autoincrement())
+  titulo    String
   descricao String?
-  valor Int 
+  valor     Float
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  cargo     String
+  salary    Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Log {
+  id            Int      @id @default(autoincrement())
+
+  notaFiscal    Int
+  senderName    String
+
+  arrivedAt     DateTime
+
+  statusId      Int
+  status        Status   @relation(fields: [statusId], references: [id])
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Status {
+  id          Int      @id @default(autoincrement())
+
+  title       String
+  subTitle    String
+  content     String
+
+  logs        Log[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

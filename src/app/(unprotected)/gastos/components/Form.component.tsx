@@ -55,7 +55,7 @@ export default function Form({ addGastos }: FormProps) {
           id="valor"
           name="valor"
           min="0"
-          step="1"
+          step="0.01"
           required
           placeholder="Ex: 1500"
           className="w-full rounded-xl border border-zinc-800 bg-zinc-800 px-4 py-3 text-zinc-100 placeholder-zinc-500 shadow-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"

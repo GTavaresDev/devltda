@@ -1,10 +1,8 @@
-"use client";
-
 import Table from "@/app/components/Table";
-import { useUsers } from "@/app/contexts/users-context";
+import { getUsers } from "@/app/data/users";
 
-export default function List() {
-  const { users } = useUsers();
+export default async function List() {
+  const users = await getUsers();
 
   return (
     <section className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 shadow-xl shadow-black/10 text-white sm:p-5 md:mt-8 md:p-6">

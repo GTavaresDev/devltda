@@ -1,41 +1,34 @@
-type Users = {
+import { cache } from "react";
+
+import { db } from "@/db";
+import type { User } from "@/app/types/users-type";
+
+function mapUser(user: {
   id: number;
   name: string;
   cargo: string;
   salary: number;
-};
+}): User {
+  return {
+    id: user.id,
+    name: user.name,
+    cargo: user.cargo,
+    salary: user.salary,
+  };
+}
 
-export const users: Users[] = [
-  {
-    id: 1,
-    name: "Leanne Graham",
-    cargo: "Software Engineer",
-    salary: 5000,
-  },
-  {
-    id: 2,
-    name: "Ervin Howell",
-    cargo: "Product Manager",
-    salary: 6000,
-  },
-  {
-    id: 3,
-    name: "Clementine Bauch",
-    cargo: "UX Designer",
-    salary: 4500,
-  },
-  {
-    id: 4,
-    name: "Patricia Lebsack",
-    cargo: "Data Analyst",
-    salary: 5500,
-  },
-  {
-    id: 5,
-    name: "Chelsey Dietrich",
-    cargo: "HR Specialist",
-    salary: 4000,
-  },
-];
+export const getUsers = cache(async (): Promise<User[]> => {
+  const users = await db.usuario.findMany({
+    orderBy: { createdAt: "desc" },
+  });
 
-export default users;
+  return users.map(mapUser);
+});
+
+export async function getUserById(id: number): Promise<User | null> {
+  const user = await db.usuario.findUnique({
+    where: { id },
+  });
+
+  return user ? mapUser(user) : null;
+}

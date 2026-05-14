@@ -8,13 +8,17 @@ export default function CreateGastos() {
     "use server";
     const titulo = formData.get("titulo") as string;
     const descricao = formData.get("descricao") as string;
-    const valor = formData.get("valor") as string;
+    const valor = Number(formData.get("valor"));
+
+    if (!Number.isFinite(valor) || valor < 0) {
+      throw new Error("Valor de gasto invalido.");
+    }
 
     await db.gastos.create({
       data: {
         titulo,
         descricao,
-        valor: parseFloat(valor),
+        valor,
       },
     });
 

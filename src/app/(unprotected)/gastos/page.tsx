@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { db } from "@/db";
+import { getExpenses } from "@/app/data/expenses";
 
 export default async function Home() {
-  const todos = await db.gastos.findMany();
+  const expenses = await getExpenses();
 
   return (
     <main className="flex flex-col items-center text-zinc-100">
@@ -27,27 +27,27 @@ export default async function Home() {
         </div>
 
         <div className="grid gap-4">
-          {todos.length > 0 ? (
-            todos.map((gasto) => (
+          {expenses.length > 0 ? (
+            expenses.map((expense) => (
               <div
-                key={gasto.id}
+                key={expense.id}
                 className="group flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 shadow-sm transition-all hover:border-zinc-700 hover:shadow-lg hover:shadow-black/10 sm:p-5"
               >
                 <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <h2 className="text-lg font-semibold text-zinc-100 transition-colors group-hover:text-indigo-400">
-                    {gasto.titulo}
+                    {expense.title}
                   </h2>
                   <span className="w-fit rounded bg-zinc-800 px-2 py-1 text-[10px] uppercase tracking-wider text-zinc-500">
-                    ID: {gasto.id.toString().slice(-4)}
+                    ID: {expense.id.toString().slice(-4)}
                   </span>
                 </div>
 
                 <p className="text-zinc-400 leading-relaxed text-sm">
-                  {gasto.descricao}
+                  {expense.description}
                 </p>
 
                 <p className="text-zinc-400 leading-relaxed text-sm">
-                  {gasto.valor.toLocaleString("pt-BR", {
+                  {expense.amount.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}

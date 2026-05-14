@@ -1,14 +1,11 @@
-"use client";
-
 import { notFound } from "next/navigation";
 
-import { useUsers } from "@/app/contexts/users-context";
+import { getUserById } from "@/app/data/users";
 
 import Voltar from "../components/Voltar";
 
-export default function UserDetailsContent({ id }: { id: string }) {
-  const { users } = useUsers();
-  const user = users.find((item) => item.id === Number(id));
+export default async function UserDetailsContent({ id }: { id: string }) {
+  const user = await getUserById(Number(id));
 
   if (!user) {
     notFound();

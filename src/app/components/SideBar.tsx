@@ -10,6 +10,7 @@ const links = [
   { href: "/salarios", label: "Salários" },
   { href: "/cargos", label: "Cargos" },
   { href: "/gastos", label: "Gastos" },
+  { href: "/rastreamento", label: "Rastreamento" },
 ];
 
 export default function SideBar() {
